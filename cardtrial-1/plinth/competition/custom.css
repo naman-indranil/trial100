@@ -1,0 +1,246 @@
+nav {
+	height: 6rem;
+	width: 100vw;
+	display: flex;
+	position: fixed;
+	z-index: 9999;
+	-webkit-transition: background-color 1500ms linear;
+}
+
+/*Styling logo*/
+.logo-plinth {
+	padding: 1vh 1vw;
+	text-align: center;
+}
+
+.logo-plinth img {
+	height: 5.5rem;
+	width: 5.5rem;
+}
+
+/*Styling Links*/
+.color-change {
+	background-color: black !important;
+	-webkit-transition: background-color 1500ms linear;
+}
+
+.nav-links {
+	display: flex;
+	list-style: none;
+	width: 88vw;
+	padding: 0 0.7vw;
+	justify-content: space-evenly;
+	align-items: center;
+	text-transform: uppercase;
+	font-family: "NGC-CondBold", sans-serif;
+	font-size: 2rem;
+}
+
+.nav-links li a {
+	text-decoration: none;
+	cursor: pointer;
+	margin: 0 0.7vw;
+	color: white;
+}
+
+/*.nav-links li a:hover {
+	border-bottom: 2px solid #c46b16;
+}*/
+
+.nav-links li {
+	position: relative;
+}
+
+.nav-links li a::before {
+	content: "";
+	display: block;
+	height: 3px;
+	width: 0%;
+
+	position: absolute;
+	transition: all ease-in-out 250ms;
+	margin: 0 0 0 10%;
+}
+
+.nav-links li a:hover::before {
+	width: 80%;
+}
+
+/*Styling Buttons*/
+.login-button {
+	background-color: transparent;
+	border: 1.5px solid #f2f5f7;
+	border-radius: 2em;
+	padding: 0.6rem 0.8rem;
+	font-family: "NGC-CondBold", sans-serif;
+	margin-left: 2vw;
+	font-size: 2rem;
+	cursor: pointer;
+	color: white;
+}
+
+.login-button:hover {
+	color: #131418;
+	background-color: #f2f5f7;
+	border: 1.5px solid #f2f5f7;
+	transition: all ease-in-out 350ms;
+}
+
+.join-button {
+	color: #131418;
+	background-color: transparent;
+	border: 1.5px solid #f2f5f7;
+	border-radius: 2em;
+	font-family: "NGC-CondBold", sans-serif;
+	padding: 0.6rem 0.8rem;
+	font-size: 2rem;
+	cursor: pointer;
+	color: white;
+}
+
+.join-button:hover {
+	color: #131418;
+	background-color: #f2f5f7;
+	border: 1.5px solid #f2f5f7;
+	transition: all ease-in-out 350ms;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div {
+	width: 30px;
+	height: 3px;
+	background: #f2f5f7;
+	margin: 5px;
+	transition: all 0.3s ease;
+}
+
+.hamburger {
+	display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px) {
+	nav {
+		position: fixed;
+		z-index: 3;
+	}
+
+	.logo-plinth {
+		margin-left: 4px;
+		z-index: 5;
+	}
+
+	.hamburger {
+		display: block;
+		position: absolute;
+		cursor: pointer;
+		right: 5%;
+		top: 50%;
+		transform: translate(-5%, -50%);
+		z-index: 2;
+		transition: all 0.7s ease;
+	}
+
+	.nav-links {
+		
+		position: fixed;
+		background-image: url("/plinth/images/background.jpg");
+		height: 100vh;
+		width: 100%;
+		margin-top: 0;
+		flex-direction: column;
+		clip-path: circle(50px at 90% -20%);
+		-webkit-clip-path: circle(50px at 90% -10%);
+		transition: all 1s ease-out;
+		pointer-events: none;
+		text-transform: uppercase;
+    font-family: "NGC-CondBold", sans-serif;
+	font-size: 2rem;
+	src: url("/plinth/fonts/NGC/NGCDINOnAir-CondBold.woff2") format("woff2"), url("/plinth/fonts/NGC/NGCDINOnAir-CondBold.woff") format("woff"),
+		url("/plinth/fonts/NGC/NGCDINOnAir-CondBold.ttf") format("truetype");
+	}
+
+	.nav-links.open {
+		clip-path: circle(1000px at 90% -10%);
+		-webkit-clip-path: circle(1000px at 90% -10%);
+		pointer-events: all;
+	}
+
+	.nav-links li {
+		opacity: 0;
+	}
+
+	.nav-links li:nth-child(1) {
+		transition: all 0.5s ease 0.2s;
+	}
+	.nav-links li:nth-child(2) {
+		transition: all 0.5s ease 0.2s;
+	}
+	.nav-links li:nth-child(3) {
+		transition: all 0.5s ease 0.2s;
+	}
+	.nav-links li:nth-child(4) {
+		transition: all 0.5s ease 0.2s;
+	}
+	.nav-links li:nth-child(5) {
+		transition: all 0.5s ease 0.2s;
+	}
+	.nav-links li:nth-child(6) {
+		transition: all 0.5s ease 0.2s;
+		margin: 0;
+	}
+	.nav-links li:nth-child(7) {
+		transition: all 0.5s ease 0.2s;
+		margin: 0;
+	}
+	.nav-links li:nth-child(8) {
+		transition: all 0.5s ease 0.2s;
+		margin: 0;
+	}
+	li.fade {
+		opacity: 1;
+	}
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1 {
+	transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+	transition: all 0.7s ease;
+	width: 0;
+}
+
+.toggle .line3 {
+	transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.different {
+	padding: 5px;
+}
+
+.different::after {
+	content: '';
+	position: absolute;
+	width: 0px;
+	height: 1.5px;
+	left: 50%;
+	bottom: 0;
+	background-color: #c46b16;
+	transition: all ease-in-out .2s;
+}
+.different:hover::after {
+	width: 100%;
+	left: 0;
+}
+
+/*styling competition page*/
+
+.present{
+	border-bottom:2px solid #c46b16 ;
+}
+
+/*---------------cards-------------------------------------------------------------*/
+
+
+  
